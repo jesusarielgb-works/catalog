@@ -1,0 +1,10 @@
+{
+  "name": "jesusarielgb-works-catalog",
+  "version": "1.0.0",
+  "scripts": {
+    "generate": "node scripts/generate-catalog.js",
+    "update-profile": "node scripts/update-org-profile.js"
+  },
+  "dependencies": { "@octokit/rest": "^21.0.0" },
+  "engines": { "node": ">=20" }
+}

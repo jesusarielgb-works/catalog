@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>jesusarielgb-works</title>
+  <style>
+    body{font-family:system-ui,sans-serif;max-width:900px;margin:2rem auto;padding:0 1rem;color:#1a1a1a}
+    h1{border-bottom:2px solid #0969da;padding-bottom:.5rem}h2{color:#0969da;margin-top:2rem}
+    table{width:100%;border-collapse:collapse;margin:1rem 0}th{background:#f6f8fa;text-align:left;padding:.5rem}
+    td{padding:.5rem;border-top:1px solid #d0d7de}a{color:#0969da;text-decoration:none}
+    a:hover{text-decoration:underline}.badge{background:#2da44e;color:#fff;font-size:.75rem;padding:.2rem .4rem;border-radius:4px}
+  </style>
+</head>
+<body>
+  <h1>jesusarielgb-works</h1>
+  <p>Open-source works by <strong>Jesus Ariel Gonzalez Bonilla</strong> <span class="badge">MIT</span></p>
+  <div id="catalog"><p>Loading...</p></div>
+  <script>
+    const D=['architecture','data','devops','security','api','testing','backend','frontend','ai','quality','education','project','research'];
+    fetch('https://api.github.com/orgs/jesusarielgb-works/repos?per_page=100&type=public')
+      .then(r=>r.json()).then(repos=>{
+        const w=repos.filter(r=>r.topics&&r.topics.includes('jesusarielgb-works')&&!r.is_template)
+          .map(r=>({name:r.name,url:r.html_url,desc:r.description||'',
+            domain:(r.topics.find(t=>t.startsWith('domain:'))||'domain:other').replace('domain:',''),
+            type:(r.topics.find(t=>t.startsWith('type:'))||'type:other').replace('type:','')}));
+        const g={};w.forEach(x=>{if(!g[x.domain])g[x.domain]=[];g[x.domain].push(x);});
+        const h=D.filter(d=>g[d]).map(d=>`<h2>${d[0].toUpperCase()+d.slice(1)}</h2><table>
+          <tr><th>Repo</th><th>Type</th><th>Description</th></tr>
+          ${g[d].map(x=>`<tr><td><a href="${x.url}">${x.name}</a></td><td>${x.type}</td><td>${x.desc}</td></tr>`).join('')}
+          </table>`).join('');
+        document.getElementById('catalog').innerHTML=h||'<p>No works yet.</p>';
+      }).catch(()=>{document.getElementById('catalog').innerHTML='<p>Could not load. <a href="https://github.com/jesusarielgb-works/catalog">View on GitHub.</a></p>';});
+  </script>
+  <footer style="margin-top:3rem;color:#57606a;font-size:.9rem">
+    All works MIT licensed &mdash; <a href="https://github.com/jesusarielgb-works">jesusarielgb-works</a>
+  </footer>
+</body></html>
