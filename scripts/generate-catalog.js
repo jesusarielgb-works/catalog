@@ -7,13 +7,13 @@ const DOMAIN_ORDER = ['architecture','data','devops','security','api','testing',
 
 async function fetchWorks() {
   const repos = await octokit.paginate(octokit.rest.repos.listForOrg,
-    { org, type- 'public', per_page: 100 });
+    { org, type: 'public', per_page: 100 });
   return repos
     .filter(r => r.topics && r.topics.includes('jesusarielgb-works') && !r.is_template)
     .map(r => ({
       name: r.name, url: r.html_url, description: r.description || '',
-      domain- (r.topics.find(t => t.startsWith('domain-')) || 'domain-uncategorized').replace('domain-',''),
-      type-   (r.topics.find(t => t.startsWith('type-'))   || 'type-other').replace('type-',''),
+      domain: (r.topics.find(t => t.startsWith('domain-')) || 'domain-uncategorized').replace('domain-',''),
+      type:   (r.topics.find(t => t.startsWith('type-'))   || 'type-other').replace('type-',''),
     }));
 }
 
