@@ -21,8 +21,8 @@
       .then(r=>r.json()).then(repos=>{
         const w=repos.filter(r=>r.topics&&r.topics.includes('jesusarielgb-works')&&!r.is_template)
           .map(r=>({name:r.name,url:r.html_url,desc:r.description||'',
-            domain:(r.topics.find(t=>t.startsWith('domain:'))||'domain:other').replace('domain:',''),
-            type:(r.topics.find(t=>t.startsWith('type:'))||'type:other').replace('type:','')}));
+            domain-(r.topics.find(t=>t.startsWith('domain-'))||'domain-other').replace('domain-',''),
+            type-(r.topics.find(t=>t.startsWith('type-'))||'type-other').replace('type-','')}));
         const g={};w.forEach(x=>{if(!g[x.domain])g[x.domain]=[];g[x.domain].push(x);});
         const h=D.filter(d=>g[d]).map(d=>`<h2>${d[0].toUpperCase()+d.slice(1)}</h2><table>
           <tr><th>Repo</th><th>Type</th><th>Description</th></tr>
