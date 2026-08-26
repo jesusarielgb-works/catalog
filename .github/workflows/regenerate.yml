@@ -17,7 +17,7 @@ jobs:
       - name: Generate catalog README
         run: node scripts/generate-catalog.js
         env:
-          GITHUB_TOKEN: ${{ secrets.CATALOG_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.TOKEN_CATALOG }}
           ORG_NAME: jesusarielgb-works
       - name: Commit README
         run: |
@@ -29,5 +29,5 @@ jobs:
       - name: Update org profile
         run: node scripts/update-org-profile.js
         env:
-          GITHUB_TOKEN: ${{ secrets.CATALOG_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.TOKEN_CATALOG }}
           ORG_NAME: jesusarielgb-works
