@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
   <title>jesusarielgb-works</title>
@@ -13,9 +13,10 @@
 </head>
 <body>
   <h1>jesusarielgb-works</h1>
-  <p>Open-source works by <strong>Jesus Ariel Gonzalez Bonilla</strong> <span class="badge">MIT</span></p>
+  <p>Open-source works by <strong>Jesus Ariel Gonzalez Bonilla</strong> </p>
   <div id="catalog"><p>Loading...</p></div>
   <script>
+    const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
     const D=['architecture','data','devops','security','api','testing','backend','frontend','ai','quality','education','project','research'];
     fetch('https://api.github.com/orgs/jesusarielgb-works/repos?per_page=100&type=public')
       .then(r=>r.json()).then(repos=>{
@@ -26,12 +27,12 @@
         const g={};w.forEach(x=>{if(!g[x.domain])g[x.domain]=[];g[x.domain].push(x);});
         const h=D.filter(d=>g[d]).map(d=>`<h2>${d[0].toUpperCase()+d.slice(1)}</h2><table>
           <tr><th>Repo</th><th>Type</th><th>Description</th></tr>
-          ${g[d].map(x=>`<tr><td><a href="${x.url}">${x.name}</a></td><td>${x.type}</td><td>${x.desc}</td></tr>`).join('')}
+          ${g[d].map(x=>`<tr><td><a href="${esc(x.url)}">${esc(x.name)}</a></td><td>${esc(x.type)}</td><td>${esc(x.desc)}</td></tr>`).join('')}
           </table>`).join('');
         document.getElementById('catalog').innerHTML=h||'<p>No works yet.</p>';
       }).catch(()=>{document.getElementById('catalog').innerHTML='<p>Could not load. <a href="https://github.com/jesusarielgb-works/catalog">View on GitHub.</a></p>';});
   </script>
   <footer style="margin-top:3rem;color:#57606a;font-size:.9rem">
-    All works MIT licensed &mdash; <a href="https://github.com/jesusarielgb-works">jesusarielgb-works</a>
+    Each work states its own license &mdash; <a href="https://github.com/jesusarielgb-works">jesusarielgb-works</a>
   </footer>
 </body></html>
