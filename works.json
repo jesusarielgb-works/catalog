@@ -1,5 +1,23 @@
 [
   {
+    "name": "engineering-casebook",
+    "url": "https://github.com/jesusarielgb-works/engineering-casebook",
+    "description": "Verified records of engineering failures and successes, and the sources behind the rules of the jesusarielgb-works frameworks",
+    "domain": "quality",
+    "type": "standards",
+    "status": "draft",
+    "version": "v1.0.0"
+  },
+  {
+    "name": "liquibase-migration-standards",
+    "url": "https://github.com/jesusarielgb-works/liquibase-migration-standards",
+    "description": "Naming conventions, structure and rollback strategy for Liquibase migrations — MIT",
+    "domain": "data",
+    "type": "standards",
+    "status": "stable",
+    "version": "v1.1.0"
+  },
+  {
     "name": "microservices-governance-framework",
     "url": "https://github.com/jesusarielgb-works/microservices-governance-framework",
     "description": "A complete microservices governance framework — documentation templates, ADRs, OpenAPI contracts, TDD strategy, DevOps, and stack guides. MIT Licensed.",
@@ -9,12 +27,21 @@
     "version": "v1.0.0"
   },
   {
+    "name": "mobile-governance-framework",
+    "url": "https://github.com/jesusarielgb-works/mobile-governance-framework",
+    "description": "Stack-agnostic governance framework for mobile applications (MIT). Companion to monolith & microservices governance frameworks.",
+    "domain": "frontend",
+    "type": "framework",
+    "status": "stable",
+    "version": "v1.1.0"
+  },
+  {
     "name": "monolith-governance-framework",
     "url": "https://github.com/jesusarielgb-works/monolith-governance-framework",
     "description": "Governance framework and standards for monolithic software systems — MIT",
     "domain": "architecture",
     "type": "framework",
     "status": "stable",
-    "version": "v2.0.0"
+    "version": "v2.1.0"
   }
 ]
