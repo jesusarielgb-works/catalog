@@ -1,0 +1,20 @@
+[
+  {
+    "name": "microservices-governance-framework",
+    "url": "https://github.com/jesusarielgb-works/microservices-governance-framework",
+    "description": "A complete microservices governance framework — documentation templates, ADRs, OpenAPI contracts, TDD strategy, DevOps, and stack guides. MIT Licensed.",
+    "domain": "architecture",
+    "type": "framework",
+    "status": "stable",
+    "version": "v1.0.0"
+  },
+  {
+    "name": "monolith-governance-framework",
+    "url": "https://github.com/jesusarielgb-works/monolith-governance-framework",
+    "description": "Governance framework and standards for monolithic software systems — MIT",
+    "domain": "architecture",
+    "type": "framework",
+    "status": "stable",
+    "version": "v2.0.0"
+  }
+]
