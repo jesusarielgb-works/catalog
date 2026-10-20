@@ -11,7 +11,7 @@
 
 | Repo | Type | Version | Status | Description |
 |------|------|---------|--------|-------------|
-| [microservices-governance-framework](https://github.com/jesusarielgb-works/microservices-governance-framework) | `framework` | v1.0.0 | stable | A complete microservices governance framework — documentation templates, ADRs, OpenAPI contracts, TDD strategy, DevOps, and stack guides. MIT Licensed. |
+| [microservices-governance-framework](https://github.com/jesusarielgb-works/microservices-governance-framework) | `framework` | v1.0.1 | stable | A complete microservices governance framework — documentation templates, ADRs, OpenAPI contracts, TDD strategy, DevOps, and stack guides. MIT Licensed. |
 | [monolith-governance-framework](https://github.com/jesusarielgb-works/monolith-governance-framework) | `framework` | v2.1.0 | stable | Governance framework and standards for monolithic software systems — MIT |
 
 ### Data (1)
